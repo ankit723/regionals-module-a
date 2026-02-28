@@ -6,11 +6,14 @@ export default function B1(){
 
     const [isOpen, setIsOpen] = useState(false)
 
-    window.addEventListener('keydown', (e)=>{
-        if(e.key === "Escape"){
-            setIsOpen(false)
-        }
-    })
+    useEffect(()=>{
+
+        window?.addEventListener('keydown', (e)=>{
+            if(e.key === "Escape"){
+                setIsOpen(false)
+            }
+        })
+    }, [])
 
     return(
         <div className="hero w-screen h-screen flex justify-center items-center bg-slate-100" style={{overflow:isOpen?"hidden":"scroll"}}>

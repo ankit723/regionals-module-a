@@ -9,8 +9,8 @@ export async function GET(req:NextRequest) {
     const result = await prisma.product.findMany({
         where: {
             OR: [{
-                name: query
-            }, {category: query}
+                name: "query"
+            }, {category: "query"}
             ]
         }
     })
